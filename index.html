@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dylan Brooks | Portfolio</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Scroll to Top Button -->
+        <div id="scroll-container">
+            <button id="drop-down" aria-label="Scroll to top">↑ Top</button>
+        </div>
+
+        <!-- Navigation -->
+        <div id="nav-container">
+            <nav>
+                <span class="plant-icon">🌱</span>
+                <a class="nav-buttons" href="#home-container">Home</a>
+                <a class="nav-buttons" href="#about-container">About</a>
+                <a class="nav-buttons" href="#resume-container">Resume</a>
+                <a class="nav-buttons" href="#project-container">Projects</a>
+                <a class="nav-buttons" href="#contact-container">Contact</a>
+                <span class="plant-icon">🌱</span>
+            </nav>
+        </div>
+
+        <!-- Home Section -->
+        <div id="home-container">
+            <img id="profile-pic" src="./images/profile-pic.jpg" alt="Dylan Brooks profile picture">
+            <div id="home-container-content">
+                <h1 id="home-name">Dylan Brooks</h1>
+                <h4 id="home-heading">
+                    SWE Intern at <a class="datadog-link" href="https://www.datadoghq.com/" target="_blank">Datadog</a>
+                    &nbsp;|&nbsp; Prev. SWE at <a class="datadog-link" href="https://www.lumilumi.vision/" target="_blank">LUMI LUMI Vision</a>
+                    <br>Passionate About Problem-Solving, Innovation, and Continuous Growth
+                </h4>
+                <p id="home-content">
+                    I'm Dylan Brooks — a Computer Science student at Drew University with a passion for
+                    coding, data science, and web development. I enjoy building innovative projects using
+                    Python, SQL, JavaScript, and more. Welcome to my portfolio, feel free to explore my work!
+                </p>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- About / Skills Section -->
+        <div id="about-container">
+            <h1 id="about-name">About Me</h1>
+
+            <!-- Programming Skills -->
+            <h3 class="section-label">Programming Skills</h3>
+            <div class="wrapper">
+                <div class="container">
+                    <input type="radio" id="c2" name="slide" checked>
+                    <label for="c2" class="card" id="two">
+                        <div class="row">
+                            <div class="icon">1</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Java</h4>
+                                <p class="skills-desc">Strong understanding of object-oriented programming
+                                    concepts and data structures in Java. Experienced in developing algorithms
+                                    and applications.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="c3" name="slide">
+                    <label for="c3" class="card" id="three">
+                        <div class="row">
+                            <div class="icon">2</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">SQL</h4>
+                                <p class="skills-desc">Experienced in writing complex SQL queries for data
+                                    retrieval, database design, and optimization. Familiar with relational
+                                    databases such as MySQL and PostgreSQL.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="c4" name="slide">
+                    <label for="c4" class="card" id="four">
+                        <div class="row">
+                            <div class="icon">3</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">HTML</h4>
+                                <p class="skills-desc">Proficient in writing clean, semantic HTML to structure
+                                    web pages effectively. Experienced in accessibility best practices (ARIA),
+                                    SEO-friendly markup, and integrating third-party APIs.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="c5" name="slide">
+                    <label for="c5" class="card" id="five">
+                        <div class="row">
+                            <div class="icon">4</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">CSS</h4>
+                                <p class="skills-desc">Skilled in designing responsive and visually appealing
+                                    websites using modern CSS techniques, including Flexbox, Grid, animations,
+                                    and media queries.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="c6" name="slide">
+                    <label for="c6" class="card" id="six">
+                        <div class="row">
+                            <div class="icon">5</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">JavaScript</h4>
+                                <p class="skills-desc">Experienced in developing interactive web applications
+                                    using JavaScript, including DOM manipulation, event handling, and ES6+
+                                    features.</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Professional Skills -->
+            <h3 class="section-label">Professional Skills</h3>
+            <div class="pro-skills-bg">
+                <div class="wrapper">
+                    <div class="container pro-container">
+                    <input type="radio" id="p1" name="pro-slide" checked>
+                    <label for="p1" class="card" id="pro-one">
+                        <div class="row">
+                            <div class="icon">💬</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Communication</h4>
+                                <p class="skills-desc">Strong verbal and written communication skills developed through team projects, internships, and academic presentations.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="p2" name="pro-slide">
+                    <label for="p2" class="card" id="pro-two">
+                        <div class="row">
+                            <div class="icon">🧩</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Problem-Solving</h4>
+                                <p class="skills-desc">Ability to break down complex technical and analytical problems into structured, efficient solutions.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="p3" name="pro-slide">
+                    <label for="p3" class="card" id="pro-three">
+                        <div class="row">
+                            <div class="icon">⏱️</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Time Management</h4>
+                                <p class="skills-desc">Efficient in balancing coursework, internships, and personal projects by prioritizing tasks and meeting deadlines.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="p4" name="pro-slide">
+                    <label for="p4" class="card" id="pro-four">
+                        <div class="row">
+                            <div class="icon">🤝</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Teamwork</h4>
+                                <p class="skills-desc">Experienced collaborating with cross-functional teams at Datadog and LUMI LUMI Vision on real-world engineering challenges.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="p5" name="pro-slide">
+                    <label for="p5" class="card" id="pro-five">
+                        <div class="row">
+                            <div class="icon">⚡</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Adaptability</h4>
+                                <p class="skills-desc">Quick to pick up new technologies and frameworks, adapting to fast-moving environments across different roles and teams.</p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            </div><!-- end pro-skills-bg -->
+
+        </div><!-- end #about-container -->
+
+        <br>
+
+        <!-- Resume Section -->
+        <div id="resume-container">
+            <h1 id="resume-title">My Resume</h1>
+            <a id="resume-link" href="https://docs.google.com/document/d/1cv_3MZHL13gdRnNn7W3K9cCZ6oC6mCZEWpQEAzBEOnk/edit?usp=sharing" target="_blank">
+                <div id="resume-inner">
+                    <img id="resume-image" src="./images/resume-image.png" alt="Dylan Brooks Resume Preview">
+                </div>
+            </a>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="project-container">
+            <h1>Projects</h1>
+            <div class="projects-grid">
+                <div class="project-card" id="chocolate-database">
+                    <img class="project-image" src="./images/placeholder.jpg" alt="Chocolate Database Project">
+                    <h3>Chocolate Database</h3>
+                    <p>A comprehensive database application for managing chocolate inventory, built with SQL and Java.
+                        Features include data querying, reporting, and a user-friendly interface for tracking chocolate
+                        varieties, origins, and sales data.</p>
+                    <a class="project-link" href="#" target="_blank">View Project →</a>
+                </div>
+                <div class="project-card" id="pomodoro-app">
+                    <img class="project-image" src="./images/placeholder.jpg" alt="Pomodoro App Project">
+                    <h3>Pomodoro Application</h3>
+                    <p>An interactive Pomodoro timer app developed with JavaScript and HTML/CSS. Helps users maintain
+                        productivity by alternating work sessions with short breaks, featuring customizable timers
+                        and progress tracking.</p>
+                    <a class="project-link" href="#" target="_blank">View Project →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact-container">
+            <h1>Contact Me</h1>
+            <div id="contact-box">
+                <fieldset id="email-field">
+                    <legend>Email Me</legend>
+
+                    <label for="user-email">Email Address <span class="required">*</span></label>
+                    <input required type="email" id="user-email" placeholder="example@email.com">
+
+                    <label for="user-phone">Phone Number <span class="optional">(Optional)</span></label>
+                    <input type="tel" id="user-phone" placeholder="123-456-7890">
+
+                    <label for="user-first-name">First Name <span class="required">*</span></label>
+                    <input required type="text" id="user-first-name" placeholder="Your name">
+
+                    <label for="user-message">Message <span class="required">*</span></label>
+                    <textarea id="user-message" placeholder="Write your message here..."></textarea>
+
+                    <div id="form-feedback"></div>
+                    <br>
+                    <button type="button" id="submit-btn">Send Message</button>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p>© 2025 Dylan Brooks &nbsp;·&nbsp; Built with 🌱 &nbsp;·&nbsp;
+                <a href="https://www.linkedin.com/in/dylan-brooks" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
+                <a href="https://github.com/dylanbrooks" target="_blank">GitHub</a>
+            </p>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>

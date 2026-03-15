@@ -1,0 +1,768 @@
+/* ============================
+   CSS Variables & Base
+   ============================ */
+:root {
+    --green-dark:    #18341f;
+    --green-mid:     #345b3e;
+    --green-soft:    #3d6043;
+    --green-nav:     #526d59;
+    --green-btn:     #689a75;
+    --green-light:   #97ac8f;
+    --green-pale:    #adc7af;
+    --tan-dark:      #7c6f5d;
+    --tan-mid:       #baa88d;
+    --tan-light:     #d9cab3;
+    --white:         #ffffff;
+    --radius-card:   16px;
+    --radius-sm:     8px;
+    --shadow:        0 10px 28px rgba(0,0,0,0.15);
+    --transition:    0.3s ease;
+}
+
+/* ============================
+   General
+   ============================ */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-image: url("./images/background-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+}
+
+a { text-decoration: none; }
+
+/* ============================
+   Scroll to Top Button
+   ============================ */
+#scroll-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    display: none;
+}
+
+#drop-down {
+    padding: 12px 18px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--green-dark);
+    color: white;
+    font-weight: bold;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+#drop-down:hover {
+    background-color: var(--green-mid);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+/* ============================
+   Navigation
+   ============================ */
+#nav-container {
+    background-color: rgba(82, 109, 89, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 16px 20px;
+    margin: 20px;
+    border-radius: var(--radius-card);
+    position: sticky;
+    top: 10px;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+nav {
+    font-family: 'DM Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.nav-buttons {
+    background-color: var(--green-light);
+    padding: 8px 20px;
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: var(--transition);
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-buttons:hover {
+    background-color: var(--green-btn);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.plant-icon {
+    font-size: 1.5rem;
+    cursor: default;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+}
+
+.plant-icon:hover::before,
+.plant-icon:hover::after {
+    content: '✨';
+    position: absolute;
+    font-size: 1rem;
+    opacity: 1;
+    animation: sparkle 1s infinite;
+}
+
+.plant-icon:hover::before { top: -10px; left: -5px; }
+.plant-icon:hover::after  { top: -10px; right: -5px; }
+
+@keyframes sparkle {
+    0%, 100% { transform: scale(0.5) rotate(0deg); opacity: 0; }
+    50%       { transform: scale(1.2) rotate(20deg); opacity: 1; }
+}
+
+/* ============================
+   Home Section
+   ============================ */
+#home-container {
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: var(--radius-card);
+    padding: 30px;
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-sizing: border-box;
+}
+
+#home-container:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+#profile-pic {
+    width: 220px;
+    height: 290px;
+    object-fit: cover;
+    border: 6px solid var(--tan-dark);
+    border-radius: var(--radius-card);
+    flex-shrink: 0;
+}
+
+#home-container-content {
+    padding-left: 40px;
+    max-width: 520px;
+}
+
+#home-name {
+    font-size: 2.4rem;
+    color: var(--green-mid);
+    margin-bottom: 6px;
+}
+
+#home-heading {
+    color: var(--green-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.datadog-link {
+    color: var(--green-dark);
+    font-weight: 600;
+    transition: var(--transition);
+    border-radius: 4px;
+    padding: 1px 3px;
+}
+
+.datadog-link:hover {
+    background-color: var(--green-light);
+    color: white;
+}
+
+#home-content {
+    color: white;
+    background-color: var(--green-light);
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    line-height: 1.7;
+    font-size: 0.97rem;
+}
+
+/* ============================
+   About Section
+   ============================ */
+#about-container {
+    background-color: var(--green-pale);
+    border-radius: var(--radius-card);
+    padding: 30px 20px;
+    width: 70%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+#about-container:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+#about-name {
+    background-color: #99b39c;
+    color: white;
+    padding: 8px 30px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.section-label {
+    font-family: 'DM Serif Display', serif;
+    color: var(--green-dark);
+    font-size: 1.3rem;
+    margin: 24px 0 10px;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* ============================
+   Programming Skills Cards
+   ============================ */
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.container {
+    width: 540px;
+    height: 280px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.card {
+    width: 130px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 22px;
+    margin: 0 8px;
+    transition: .6s cubic-bezier(.28, -0.03, 0, 0.99);
+    box-shadow: 0px 8px 24px -4px rgba(24, 52, 31, 0.5);
+}
+
+.row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+
+.icon {
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    font-size: 13px;
+    padding-right: 12px;
+}
+
+.skills-mini-title {
+    text-transform: uppercase;
+    padding-top: 18px;
+    margin-bottom: 6px;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 0.05em;
+}
+
+.skills-desc {
+    color: rgb(210, 240, 210);
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+input[type="radio"] { display: none; }
+
+input:checked + label { width: 580px; }
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Pro skills container same size as programming skills */
+.pro-container {
+    width: 540px;
+    height: 280px;
+}
+
+#two   { background-color: #4f6643; }
+#three { background-color: #627a55; }
+#four  { background-color: #78916b; }
+#five  { background-color: #91ab83; }
+#six   { background-color: #aec6a1; }
+
+/* ============================
+   Professional Skills
+   ============================ */
+.professional-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    padding: 10px 0 20px;
+}
+
+.pro-card {
+    background-color: white;
+    border-radius: var(--radius-card);
+    padding: 20px 18px;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: transform var(--transition), box-shadow var(--transition);
+    cursor: default;
+}
+
+.pro-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+.pro-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.pro-card h4 {
+    color: var(--green-dark);
+    font-family: 'DM Serif Display', serif;
+    font-size: 1rem;
+    margin: 0 0 8px;
+}
+
+.pro-card p {
+    color: var(--green-mid);
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ============================
+   Resume Section
+   ============================ */
+#resume-container {
+    background-color: var(--tan-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: var(--radius-card);
+    padding: 30px 24px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+#resume-container:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+#resume-title {
+    color: white;
+    background-color: var(--tan-mid);
+    padding: 8px 28px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 22px;
+    font-size: 1.7rem;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+#resume-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#resume-inner {
+    background-color: white;
+    border-radius: var(--radius-card);
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: box-shadow var(--transition), transform var(--transition);
+}
+
+#resume-inner:hover {
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+    transform: scale(1.01);
+}
+
+#resume-image {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    border-radius: var(--radius-sm);
+    border: 3px solid transparent;
+    transition: border var(--transition);
+}
+
+#resume-image:hover {
+    border: 3px solid var(--tan-dark);
+}
+
+/* ============================
+   Projects Section
+   ============================ */
+#project-container {
+    background-color: var(--tan-dark);
+    padding: 28px;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: var(--radius-card);
+    text-align: center;
+    color: white;
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-sizing: border-box;
+}
+
+#project-container:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+#project-container > h1 {
+    background-color: var(--tan-mid);
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 24px;
+    font-size: 1.7rem;
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background-color: #e8ddd0;
+    border-radius: var(--radius-card);
+    padding: 22px;
+    width: 42%;
+    min-width: 240px;
+    text-align: left;
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-sizing: border-box;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.25);
+}
+
+.project-image {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 14px;
+}
+
+.project-card h3 {
+    color: var(--green-dark);
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    letter-spacing: 0.03em;
+}
+
+.project-card p {
+    color: #4a3f35;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: var(--tan-dark);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    background-color: var(--green-mid);
+    transform: translateX(3px);
+}
+
+/* Pro skills wrapper background */
+.pro-skills-bg {
+    background-color: rgba(255,255,255,0.35);
+    border-radius: var(--radius-card);
+    padding: 16px 20px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================
+   Professional Skills - Pro Card Colors
+   ============================ */
+#pro-one   { background-color: #4f6643; }
+#pro-two   { background-color: #627a55; }
+#pro-three { background-color: #78916b; }
+#pro-four  { background-color: #91ab83; }
+#pro-five  { background-color: #aec6a1; }
+
+/* ============================
+   Contact Section
+   ============================ */
+#contact-container {
+    background-color: var(--tan-light);
+    padding: 28px;
+    margin: 20px auto;
+    width: 70%;
+    border-radius: var(--radius-card);
+    text-align: center;
+    color: white;
+    transition: transform var(--transition), box-shadow var(--transition);
+    box-sizing: border-box;
+}
+
+#contact-container:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+#contact-container > h1 {
+    background-color: var(--tan-mid);
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+
+#contact-box {
+    background-color: var(--tan-mid);
+    padding: 24px;
+    border-radius: var(--radius-card);
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+#email-field {
+    border: none;
+    padding: 24px;
+    background-color: #c9b89e;
+    border-radius: var(--radius-card);
+    /* Fix legend floating weirdness */
+    display: flex;
+    flex-direction: column;
+}
+
+#email-field legend {
+    color: var(--green-dark);
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'DM Serif Display', serif;
+    /* Reset browser default legend positioning */
+    float: left;
+    width: 100%;
+    padding: 0 0 12px 0;
+    margin-bottom: 4px;
+    border-bottom: 2px solid var(--tan-dark);
+}
+
+#email-field label {
+    display: block;
+    margin: 14px 0 5px;
+    color: var(--green-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.required { color: #c0392b; font-size: 0.85rem; }
+.optional  { color: var(--green-dark); font-weight: 400; font-size: 0.8rem; }
+
+#email-field input,
+#email-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    transition: border var(--transition);
+    background-color: white;
+}
+
+#email-field input:focus,
+#email-field textarea:focus {
+    outline: none;
+    border-color: var(--tan-dark);
+}
+
+#email-field textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+#submit-btn {
+    background-color: var(--tan-dark);
+    color: white;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    margin-top: 12px;
+}
+
+#submit-btn:hover {
+    background-color: var(--tan-mid);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+#form-feedback {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    min-height: 20px;
+}
+
+#form-feedback.success { color: var(--green-dark); font-weight: 600; }
+#form-feedback.error   { color: #c0392b; font-weight: 600; }
+
+/* ============================
+   Footer
+   ============================ */
+#footer {
+    text-align: center;
+    padding: 24px;
+    color: white;
+    font-size: 0.88rem;
+    opacity: 0.85;
+}
+
+#footer a {
+    color: white;
+    text-decoration: underline;
+    transition: opacity var(--transition);
+}
+
+#footer a:hover { opacity: 0.7; }
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 900px) {
+    #home-container,
+    #about-container,
+    #resume-container,
+    #project-container,
+    #contact-container { width: 90%; }
+}
+
+@media (max-width: 768px) {
+    body { background-attachment: scroll; }
+
+    /* Nav: shrink buttons, hide plant icons, stay centered */
+    #nav-container { padding: 8px 10px; margin: 8px; }
+    nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 6px;
+        justify-content: center;
+        padding: 4px 0;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    .plant-icon { display: none; }
+    .nav-buttons { padding: 7px 14px; font-size: 0.8rem; flex-shrink: 0; }
+
+    #home-container { flex-direction: column; padding: 20px; text-align: center; }
+    #home-container-content { padding-left: 0; }
+    #profile-pic { width: 180px; height: 240px; }
+    #home-name { font-size: 1.9rem; }
+
+    .container { width: 100%; height: auto; flex-direction: column; align-items: center; }
+    .card { width: 85%; margin: 8px 0; }
+    input:checked + label { width: 85%; }
+
+    #resume-image { width: 100%; }
+    .projects-grid { flex-direction: column; align-items: center; }
+    .project-card { width: 90%; }
+    #contact-box { width: 95%; }
+}
+
+@media (max-width: 480px) {
+    #home-name { font-size: 1.6rem; }
+    .card { width: 95%; }
+    input:checked + label { width: 95%; }
+}
