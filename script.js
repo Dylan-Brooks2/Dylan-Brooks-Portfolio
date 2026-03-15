@@ -16,7 +16,15 @@ scrollContainer.style.display = 'none';
 
 
 // ============================
-// Contact Form Validation
+// EmailJS Initialization
+// ============================
+(function() {
+    emailjs.init("dnrJt4ojyuci2ewsT");
+})();
+
+
+// ============================
+// Contact Form Validation and Sending
 // ============================
 const submitBtn  = document.getElementById('submit-btn');
 const feedback   = document.getElementById('form-feedback');
@@ -31,6 +39,7 @@ submitBtn.addEventListener('click', () => {
     const email   = emailInput.value.trim();
     const name    = nameInput.value.trim();
     const message = msgInput.value.trim();
+    const phone   = document.getElementById('user-phone').value.trim();
 
     if (!email || !name || !message) {
         showFeedback('Please fill in all required fields.', 'error');
@@ -42,12 +51,38 @@ submitBtn.addEventListener('click', () => {
         return;
     }
 
-    // Success
-    showFeedback(`Thanks, ${name}! Your message was sent. I'll be in touch soon. 🌱`, 'success');
-    emailInput.value = '';
-    nameInput.value  = '';
-    msgInput.value   = '';
-    document.getElementById('user-phone').value = '';
+    // Disable button and show sending state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    console.log('Starting to send email...');
+
+    // Send email using EmailJS
+    const templateParams = {
+        from_name: name,
+        from_email: email,
+        phone: phone,
+        message: message,
+        to_email: 'dylanbrooks0215@gmail.com' // Your email address
+    };
+
+    emailjs.send('service_kr214ck', 'template_v2azzno', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            showFeedback(`Thanks, ${name}! Your message was sent. I'll be in touch soon. 🌱`, 'success');
+            emailInput.value = '';
+            nameInput.value  = '';
+            msgInput.value   = '';
+            document.getElementById('user-phone').value = '';
+        }, function(error) {
+            console.log('FAILED...', error);
+            showFeedback('Sorry, there was an error sending your message. Please try again later.', 'error');
+        })
+        .finally(() => {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+            console.log('Button re-enabled');
+        });
 });
 
 function isValidEmail(email) {
