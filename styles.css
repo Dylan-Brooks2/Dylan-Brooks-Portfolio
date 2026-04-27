@@ -146,7 +146,7 @@ nav {
    Home Section
    ============================ */
 #home-container {
-    background-color: var(--white);
+    background-color: #f5f8f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,7 +266,8 @@ nav {
 }
 
 .container {
-    width: 540px;
+    width: 100%;
+    max-width: 960px;
     height: 280px;
     display: flex;
     justify-content: flex-start;
@@ -309,6 +310,8 @@ nav {
     height: 100%;
     font-size: 13px;
     padding-right: 12px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .skills-mini-title {
@@ -333,19 +336,24 @@ input:checked + label { width: 580px; }
 input:checked + label .description {
     opacity: 1 !important;
     transform: translateY(0) !important;
+    transition: opacity 0.3s ease 0.45s !important;
 }
 
 /* Pro skills container same size as programming skills */
 .pro-container {
-    width: 540px;
+    width: 100%;
+    max-width: 960px;
     height: 280px;
 }
 
-#two   { background-color: #4f6643; }
-#three { background-color: #627a55; }
-#four  { background-color: #78916b; }
-#five  { background-color: #91ab83; }
-#six   { background-color: #aec6a1; }
+#two   { background-color: #2e5135; }
+#three { background-color: #3d6342; }
+#four  { background-color: #4e7552; }
+#five  { background-color: #608764; }
+#six   { background-color: #739976; }
+#seven { background-color: #88ab89; }
+#eight { background-color: #9ebd9d; }
+#nine  { background-color: #b4cfb1; }
 
 /* ============================
    Professional Skills
@@ -567,11 +575,13 @@ input:checked + label .description {
 /* ============================
    Professional Skills - Pro Card Colors
    ============================ */
-#pro-one   { background-color: #4f6643; }
-#pro-two   { background-color: #627a55; }
-#pro-three { background-color: #78916b; }
-#pro-four  { background-color: #91ab83; }
-#pro-five  { background-color: #aec6a1; }
+#pro-one   { background-color: #2e5135; }
+#pro-two   { background-color: #3d6342; }
+#pro-three { background-color: #4e7552; }
+#pro-four  { background-color: #608764; }
+#pro-five  { background-color: #739976; }
+#pro-six   { background-color: #88ab89; }
+#pro-seven { background-color: #9ebd9d; }
 
 /* ============================
    Contact Section
@@ -716,6 +726,68 @@ input:checked + label .description {
 }
 
 #footer a:hover { opacity: 0.7; }
+
+/* ============================
+   Scroll Reveal
+   ============================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+    will-change: transform, opacity;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================
+   Typing Effect
+   ============================ */
+#typed-line {
+    font-size: 1.05rem;
+    color: var(--green-mid);
+    font-weight: 600;
+    margin: 2px 0 14px;
+    min-height: 1.6em;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: var(--green-mid);
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: blink 0.75s steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* ============================
+   Tech Tags
+   ============================ */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.tech-tag {
+    background-color: var(--green-dark);
+    color: white;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
 
 /* ============================
    Responsive

@@ -1,4 +1,58 @@
 // ============================
+// Typing Effect
+// ============================
+const phrases = [
+    'Software Engineer',
+    'CS Student at Drew University',
+    'Web Developer',
+    'Data Science Enthusiast'
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typedEl = document.getElementById('typed-text');
+
+function type() {
+    const current = phrases[phraseIndex];
+    typedEl.textContent = isDeleting
+        ? current.substring(0, charIndex - 1)
+        : current.substring(0, charIndex + 1);
+    charIndex += isDeleting ? -1 : 1;
+
+    let delay = isDeleting ? 55 : 95;
+
+    if (!isDeleting && charIndex === current.length) {
+        delay = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        delay = 400;
+    }
+
+    setTimeout(type, delay);
+}
+
+type();
+
+
+// ============================
+// Scroll Reveal
+// ============================
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+
+// ============================
 // Scroll to Top Button
 // ============================
 const scrollButton = document.getElementById('drop-down');

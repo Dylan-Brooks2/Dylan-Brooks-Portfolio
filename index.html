@@ -34,6 +34,7 @@
             <img id="profile-pic" src="./images/profile-pic.jpg" alt="Dylan Brooks profile picture">
             <div id="home-container-content">
                 <h1 id="home-name">Dylan Brooks</h1>
+                <p id="typed-line"><span id="typed-text"></span><span class="cursor"></span></p>
                 <h4 id="home-heading">
                     SWE Intern at <a class="datadog-link" href="https://www.datadoghq.com/" target="_blank">Datadog</a>
                     &nbsp;|&nbsp; Prev. SWE at <a class="datadog-link" href="https://www.lumilumi.vision/" target="_blank">LUMI LUMI Vision</a>
@@ -50,7 +51,7 @@
         <br>
 
         <!-- About / Skills Section -->
-        <div id="about-container">
+        <div id="about-container" class="reveal">
             <h1 id="about-name">About Me</h1>
 
             <!-- Programming Skills -->
@@ -121,6 +122,45 @@
                             </div>
                         </div>
                     </label>
+
+                    <input type="radio" id="c7" name="slide">
+                    <label for="c7" class="card" id="seven">
+                        <div class="row">
+                            <div class="icon">6</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Python</h4>
+                                <p class="skills-desc">Proficient in Python for scripting, automation, and data
+                                    analysis. Familiar with libraries such as pandas, NumPy, and Matplotlib for
+                                    data-driven projects.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="c8" name="slide">
+                    <label for="c8" class="card" id="eight">
+                        <div class="row">
+                            <div class="icon">7</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">React</h4>
+                                <p class="skills-desc">Familiar with building component-based UIs using React.
+                                    Experience with hooks, state management, and JSX for developing interactive
+                                    front-end applications.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="c9" name="slide">
+                    <label for="c9" class="card" id="nine">
+                        <div class="row">
+                            <div class="icon">8</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Git</h4>
+                                <p class="skills-desc">Experienced using Git for version control, including
+                                    branching, merging, and collaborating on GitHub across personal and team
+                                    projects.</p>
+                            </div>
+                        </div>
+                    </label>
                 </div>
             </div>
 
@@ -183,6 +223,28 @@
                             </div>
                         </div>
                     </label>
+
+                    <input type="radio" id="p6" name="pro-slide">
+                    <label for="p6" class="card" id="pro-six">
+                        <div class="row">
+                            <div class="icon">🎯</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Leadership</h4>
+                                <p class="skills-desc">Demonstrated leadership through managing team projects, mentoring peers, and taking initiative on technical decisions during internships.</p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <input type="radio" id="p7" name="pro-slide">
+                    <label for="p7" class="card" id="pro-seven">
+                        <div class="row">
+                            <div class="icon">🔍</div>
+                            <div class="description">
+                                <h4 class="skills-mini-title">Critical Thinking</h4>
+                                <p class="skills-desc">Skilled at evaluating complex situations and making informed decisions through analysis, reasoning, and structured problem decomposition.</p>
+                            </div>
+                        </div>
+                    </label>
                 </div>
             </div>
             </div><!-- end pro-skills-bg -->
@@ -192,7 +254,7 @@
         <br>
 
         <!-- Resume Section -->
-        <div id="resume-container">
+        <div id="resume-container" class="reveal">
             <h1 id="resume-title">My Resume</h1>
             <a id="resume-link" href="https://docs.google.com/document/d/1cv_3MZHL13gdRnNn7W3K9cCZ6oC6mCZEWpQEAzBEOnk/edit?usp=sharing" target="_blank">
                 <div id="resume-inner">
@@ -202,12 +264,17 @@
         </div>
 
         <!-- Projects Section -->
-        <div id="project-container">
+        <div id="project-container" class="reveal">
             <h1>Projects</h1>
             <div class="projects-grid">
                 <div class="project-card" id="chocolate-database">
                     <img class="project-image" src="./images/chocolate-database.png" alt="Chocolate Database Project">
                     <h3>Chocolate Database</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">JDBC</span>
+                    </div>
                     <p>A comprehensive database application for managing chocolate inventory, built with SQL and Java.
                         Features include data querying, reporting, and a user-friendly interface for tracking chocolate
                         varieties, origins, and sales data.</p>
@@ -216,6 +283,11 @@
                 <div class="project-card" id="pomodoro-app">
                     <img class="project-image" src="./images/pomodoro.png" alt="Pomodoro App Project">
                     <h3>Pomodoro Application</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
                     <p>An interactive Pomodoro timer app developed with JavaScript and HTML/CSS. Helps users maintain
                         productivity by alternating work sessions with short breaks, featuring customizable timers
                         and progress tracking.</p>
@@ -224,6 +296,11 @@
                 <div class="project-card" id="quote-app">
                     <img class="project-image" src="./images/quote-generator.png" alt="Quote Generator Project">
                     <h3>Quote Generator</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
                     <p>An interactive quote generator app developed with JavaScript and HTML/CSS. Provides users with a new inspirational quote on each visit, featuring a clean and modern design.</p>
                     <a class="project-link" href="https://dylan-brooks2.github.io/Personal-Projects/Quote-Generator/" target="_blank">View Project →</a>
                 </div>
@@ -231,7 +308,7 @@
         </div>
 
         <!-- Contact Section -->
-        <div id="contact-container">
+        <div id="contact-container" class="reveal">
             <h1>Contact Me</h1>
             <div id="contact-box">
                 <fieldset id="email-field">
@@ -258,7 +335,7 @@
 
         <!-- Footer -->
         <footer id="footer">
-            <p>© 2025 Dylan Brooks &nbsp;·&nbsp; Built with 🌱 &nbsp;·&nbsp;
+            <p>© 2025 Dylan Brooks;·&nbsp;
                 <a href="https://www.linkedin.com/in/dylan-brooks" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
                 <a href="https://github.com/dylanbrooks" target="_blank">GitHub</a>
             </p>
