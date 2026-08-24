@@ -1,270 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dylan Brooks | Portfolio</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    </head>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dylan Brooks | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <body>
+<a class="skip-link" href="#home-container">Skip to content</a>
 
-        <!-- Scroll to Top Button -->
-        <div id="scroll-container">
-            <button id="drop-down" aria-label="Scroll to top">↑ Top</button>
+<header class="site-nav">
+  <a class="nav-mark" href="#home-container" aria-label="Back to top">
+    <span aria-hidden="true">↑</span> Top
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <span class="leaf" aria-hidden="true">🌱</span>
+    <a href="#home-container">Home</a>
+    <a href="#about-container">About</a>
+    <a href="#resume-container">Resume</a>
+    <a href="#project-container">Projects</a>
+    <a href="#contact-container">Contact</a>
+    <span class="leaf" aria-hidden="true">🌱</span>
+  </nav>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <circle cx="12" cy="12" r="4.5"/>
+      <path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12H5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
+    </svg>
+  </button>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home-container" class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Computer Science · Drew University, Class of 2027</p>
+      <h1 class="hero-name">Dylan Brooks</h1>
+      <p class="hero-role">Prev. SWE Intern at <a href="https://www.datadoghq.com/" target="_blank" rel="noopener">Datadog</a> &middot; Prev. SWE at <a href="https://www.lumilumi.vision/" target="_blank" rel="noopener">LUMI Vision</a></p>
+      <p class="hero-copy">I'm a Computer Science student with a passion for coding, data science, and web development. I enjoy building projects with Python, SQL, JavaScript, and React &mdash; welcome to my corner of the internet, feel free to look around.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#project-container">View Projects</a>
+        <a class="btn btn-ghost" href="#contact-container">Get in Touch</a>
+      </div>
+
+      <div class="recruiter-box" aria-live="polite">
+        <div class="recruiter-topline">
+          <span>Recruiter Mode</span>
+          <button id="vibe-button" class="vibe-button" type="button">Tap for a vibe</button>
         </div>
-
-        <!-- Navigation -->
-        <div id="nav-container">
-            <nav>
-                <span class="plant-icon">🌱</span>
-                <a class="nav-buttons" href="#home-container">Home</a>
-                <a class="nav-buttons" href="#about-container">About</a>
-                <a class="nav-buttons" href="#resume-container">Resume</a>
-                <a class="nav-buttons" href="#project-container">Projects</a>
-                <a class="nav-buttons" href="#contact-container">Contact</a>
-                <span class="plant-icon">🌱</span>
-            </nav>
+        <p id="vibe-line">I build products people actually want.</p>
+        <div class="vibe-tags">
+          <span>React</span>
+          <span>Python</span>
+          <span>SQL</span>
+          <span>UX</span>
         </div>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <img src="images/profile-pic.jpg" alt="Portrait of Dylan Brooks" />
+      </div>
+    </div>
+  </section>
 
-        <!-- Home Section -->
-        <div id="home-container">
-            <img id="profile-pic" src="./images/profile-pic.jpg" alt="Dylan Brooks profile picture">
-            <div id="home-container-content">
-                <h1 id="home-name">Dylan Brooks</h1>
-                <h4 id="home-heading">
-                    SWE Intern at <a class="datadog-link" href="https://www.datadoghq.com/" target="_blank">Datadog</a>
-                    &nbsp;|&nbsp; Prev. SWE at <a class="datadog-link" href="https://www.lumilumi.vision/" target="_blank">LUMI LUMI Vision</a>
-                    <br>Passionate About Problem-Solving, Innovation, and Continuous Growth
-                </h4>
-                <p id="home-content">
-                    I'm Dylan Brooks — a Computer Science student at Drew University with a passion for
-                    coding, data science, and web development. I enjoy building innovative projects using
-                    Python, SQL, JavaScript, and more. Welcome to my portfolio, feel free to explore my work!
-                </p>
+  <!-- ABOUT -->
+  <section id="about-container" class="about">
+    <div class="section-head">
+      <p class="eyebrow">About Me</p>
+      <h2>Skills &amp; Journey</h2>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="skills-col">
+        <h3 class="col-title">Programming Skills</h3>
+        <ul class="skill-grid">
+          <li class="skill-card">
+            <span class="skill-name">Java</span>
+            <p>Strong grasp of object-oriented programming and data structures. Experienced building algorithms and applications.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">SQL</span>
+            <p>Writing complex queries for data retrieval, database design, and optimization across MySQL and PostgreSQL.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">HTML</span>
+            <p>Clean, semantic markup with accessibility (ARIA) and SEO best practices, plus third-party API integration.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">CSS</span>
+            <p>Responsive, visually considered layouts using Flexbox, Grid, animation, and media queries.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">JavaScript</span>
+            <p>Interactive web apps built with DOM manipulation, event handling, and modern ES6+ features.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">Python</span>
+            <p>Scripting, automation, and data analysis with pandas, NumPy, and Matplotlib.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">React</span>
+            <p>Component-based UIs with hooks, state management, and JSX for interactive front ends.</p>
+          </li>
+          <li class="skill-card">
+            <span class="skill-name">Git</span>
+            <p>Version control including branching, merging, and collaborating on GitHub across solo and team projects.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="timeline-col">
+        <h3 class="col-title">Journey</h3>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <p class="timeline-when">2023 &ndash; 2027</p>
+              <p class="timeline-what">Drew University</p>
+              <p class="timeline-detail">B.S. Computer Science, Data Science minor</p>
             </div>
-        </div>
-
-        <br>
-
-        <!-- About / Skills Section -->
-        <div id="about-container">
-            <h1 id="about-name">About Me</h1>
-
-            <!-- Programming Skills -->
-            <h3 class="section-label">Programming Skills</h3>
-            <div class="wrapper">
-                <div class="container">
-                    <input type="radio" id="c2" name="slide" checked>
-                    <label for="c2" class="card" id="two">
-                        <div class="row">
-                            <div class="icon">1</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">Java</h4>
-                                <p class="skills-desc">Strong understanding of object-oriented programming
-                                    concepts and data structures in Java. Experienced in developing algorithms
-                                    and applications.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="c3" name="slide">
-                    <label for="c3" class="card" id="three">
-                        <div class="row">
-                            <div class="icon">2</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">SQL</h4>
-                                <p class="skills-desc">Experienced in writing complex SQL queries for data
-                                    retrieval, database design, and optimization. Familiar with relational
-                                    databases such as MySQL and PostgreSQL.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="c4" name="slide">
-                    <label for="c4" class="card" id="four">
-                        <div class="row">
-                            <div class="icon">3</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">HTML</h4>
-                                <p class="skills-desc">Proficient in writing clean, semantic HTML to structure
-                                    web pages effectively. Experienced in accessibility best practices (ARIA),
-                                    SEO-friendly markup, and integrating third-party APIs.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="c5" name="slide">
-                    <label for="c5" class="card" id="five">
-                        <div class="row">
-                            <div class="icon">4</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">CSS</h4>
-                                <p class="skills-desc">Skilled in designing responsive and visually appealing
-                                    websites using modern CSS techniques, including Flexbox, Grid, animations,
-                                    and media queries.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="c6" name="slide">
-                    <label for="c6" class="card" id="six">
-                        <div class="row">
-                            <div class="icon">5</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">JavaScript</h4>
-                                <p class="skills-desc">Experienced in developing interactive web applications
-                                    using JavaScript, including DOM manipulation, event handling, and ES6+
-                                    features.</p>
-                            </div>
-                        </div>
-                    </label>
-                </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <p class="timeline-when">Internship</p>
+              <p class="timeline-what">LUMI Vision</p>
+              <p class="timeline-detail">Full-stack SWE &mdash; React &amp; Next.js e-commerce</p>
             </div>
-
-            <!-- Professional Skills -->
-            <h3 class="section-label">Professional Skills</h3>
-            <div class="pro-skills-bg">
-                <div class="wrapper">
-                    <div class="container pro-container">
-                    <input type="radio" id="p1" name="pro-slide" checked>
-                    <label for="p1" class="card" id="pro-one">
-                        <div class="row">
-                            <div class="icon">💬</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">Communication</h4>
-                                <p class="skills-desc">Strong verbal and written communication skills developed through team projects, internships, and academic presentations.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="p2" name="pro-slide">
-                    <label for="p2" class="card" id="pro-two">
-                        <div class="row">
-                            <div class="icon">🧩</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">Problem-Solving</h4>
-                                <p class="skills-desc">Ability to break down complex technical and analytical problems into structured, efficient solutions.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="p3" name="pro-slide">
-                    <label for="p3" class="card" id="pro-three">
-                        <div class="row">
-                            <div class="icon">⏱️</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">Time Management</h4>
-                                <p class="skills-desc">Efficient in balancing coursework, internships, and personal projects by prioritizing tasks and meeting deadlines.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="p4" name="pro-slide">
-                    <label for="p4" class="card" id="pro-four">
-                        <div class="row">
-                            <div class="icon">🤝</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">Teamwork</h4>
-                                <p class="skills-desc">Experienced collaborating with cross-functional teams at Datadog and LUMI LUMI Vision on real-world engineering challenges.</p>
-                            </div>
-                        </div>
-                    </label>
-
-                    <input type="radio" id="p5" name="pro-slide">
-                    <label for="p5" class="card" id="pro-five">
-                        <div class="row">
-                            <div class="icon">⚡</div>
-                            <div class="description">
-                                <h4 class="skills-mini-title">Adaptability</h4>
-                                <p class="skills-desc">Quick to pick up new technologies and frameworks, adapting to fast-moving environments across different roles and teams.</p>
-                            </div>
-                        </div>
-                    </label>
-                </div>
+          </li>
+          <li class="timeline-item timeline-item-current">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <p class="timeline-when">Internship</p>
+              <p class="timeline-what">Datadog</p>
+              <p class="timeline-detail">SWE Intern, App Builder team &mdash; frontend</p>
             </div>
-            </div><!-- end pro-skills-bg -->
+          </li>
+        </ol>
+      </div>
 
-        </div><!-- end #about-container -->
+    </div>
 
-        <br>
+    <div class="prof-skills">
+      <h3 class="col-title">Professional Skills</h3>
+      <ul class="prof-grid">
+        <li><span aria-hidden="true">💬</span><strong>Communication</strong><p>Developed through team projects, internships, and academic presentations.</p></li>
+        <li><span aria-hidden="true">🧩</span><strong>Problem-Solving</strong><p>Breaking complex technical problems into structured, efficient solutions.</p></li>
+        <li><span aria-hidden="true">⏱️</span><strong>Time Management</strong><p>Balancing coursework, internships, and personal projects against deadlines.</p></li>
+        <li><span aria-hidden="true">🤝</span><strong>Teamwork</strong><p>Collaborating with cross-functional teams at Datadog and LUMI Vision.</p></li>
+        <li><span aria-hidden="true">⚡</span><strong>Adaptability</strong><p>Quick to pick up new technologies across different roles and teams.</p></li>
+        <li><span aria-hidden="true">🎯</span><strong>Leadership</strong><p>Managing projects, mentoring peers, and owning technical decisions.</p></li>
+        <li><span aria-hidden="true">🔍</span><strong>Critical Thinking</strong><p>Evaluating complex situations through analysis and structured reasoning.</p></li>
+      </ul>
+    </div>
+  </section>
 
-        <!-- Resume Section -->
-        <div id="resume-container">
-            <h1 id="resume-title">My Resume</h1>
-            <a id="resume-link" href="https://docs.google.com/document/d/1cv_3MZHL13gdRnNn7W3K9cCZ6oC6mCZEWpQEAzBEOnk/edit?usp=sharing" target="_blank">
-                <div id="resume-inner">
-                    <img id="resume-image" src="./images/resume-image.png" alt="Dylan Brooks Resume Preview">
-                </div>
-            </a>
+  <!-- RESUME -->
+  <section id="resume-container" class="resume">
+    <div class="section-head">
+      <p class="eyebrow">Resume</p>
+      <h2>My Resume</h2>
+    </div>
+
+    <div class="resume-layout">
+      <div class="resume-preview">
+        <img src="images/resume.png" alt="Resume preview artwork" />
+      </div>
+
+      <div class="resume-content">
+        <p class="resume-copy">A full breakdown of my education, experience, and skills, including internship work, leadership, and technical projects across product, data, and software development.</p>
+        <a class="btn btn-primary" href="https://docs.google.com/document/d/1cv_3MZHL13gdRnNn7W3K9cCZ6oC6mCZEWpQEAzBEOnk/edit?usp=sharing" target="_blank" rel="noopener">View Resume →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="project-container" class="projects">
+    <div class="section-head">
+      <p class="eyebrow">Selected Work</p>
+      <h2>Projects</h2>
+    </div>
+    <div class="project-grid">
+
+      <article class="project-card planit-card">
+        <div class="project-image">
+          <span class="featured-tag">Featured</span>
+          <img src="images/planit.png" alt="PlanIt project screenshot" />
         </div>
-
-        <!-- Projects Section -->
-        <div id="project-container">
-            <h1>Projects</h1>
-            <div class="projects-grid">
-                <div class="project-card" id="chocolate-database">
-                    <img class="project-image" src="./images/chocolate-database.png" alt="Chocolate Database Project">
-                    <h3>Chocolate Database</h3>
-                    <p>A comprehensive database application for managing chocolate inventory, built with SQL and Java.
-                        Features include data querying, reporting, and a user-friendly interface for tracking chocolate
-                        varieties, origins, and sales data.</p>
-                    <a class="project-link" href="https://github.com/Dylan-Brooks2/Chocolate-Database#" target="_blank">View Project →</a>
-                </div>
-                <div class="project-card" id="pomodoro-app">
-                    <img class="project-image" src="./images/pomodoro.png" alt="Pomodoro App Project">
-                    <h3>Pomodoro Application</h3>
-                    <p>An interactive Pomodoro timer app developed with JavaScript and HTML/CSS. Helps users maintain
-                        productivity by alternating work sessions with short breaks, featuring customizable timers
-                        and progress tracking.</p>
-                    <a class="project-link" href="https://dylan-brooks2.github.io/Personal-Projects/Pomodoro%20App/" target="_blank">View Project →</a>
-                </div>
-                <div class="project-card" id="quote-app">
-                    <img class="project-image" src="./images/quote-generator.png" alt="Quote Generator Project">
-                    <h3>Quote Generator</h3>
-                    <p>An interactive quote generator app developed with JavaScript and HTML/CSS. Provides users with a new inspirational quote on each visit, featuring a clean and modern design.</p>
-                    <a class="project-link" href="https://dylan-brooks2.github.io/Personal-Projects/Quote-Generator/" target="_blank">View Project →</a>
-                </div>
-            </div>
+        <div class="project-body">
+          <h3>PlanIt</h3>
+          <div class="tags"><span>Product</span><span>UX</span><span>Full-stack</span></div>
+          <p>A planning and productivity app built to help users organize assignments, stay on track, and keep work flowing without the chaos of scattered tools.</p>
+          <a href="https://github.com/dylanbrooks" target="_blank" rel="noopener">View Project →</a>
         </div>
+      </article>
 
-        <!-- Contact Section -->
-        <div id="contact-container">
-            <h1>Contact Me</h1>
-            <div id="contact-box">
-                <fieldset id="email-field">
-                    <legend>Email Me</legend>
-
-                    <label for="user-email">Email Address <span class="required">*</span></label>
-                    <input required type="email" id="user-email" placeholder="example@email.com">
-
-                    <label for="user-phone">Phone Number <span class="optional">(Optional)</span></label>
-                    <input type="tel" id="user-phone" placeholder="123-456-7890">
-
-                    <label for="user-first-name">First Name <span class="required">*</span></label>
-                    <input required type="text" id="user-first-name" placeholder="Your name">
-
-                    <label for="user-message">Message <span class="required">*</span></label>
-                    <textarea id="user-message" placeholder="Write your message here..."></textarea>
-
-                    <div id="form-feedback"></div>
-                    <br>
-                    <button type="button" id="submit-btn">Send Message</button>
-                </fieldset>
-            </div>
+      <article class="project-card">
+        <div class="project-image">
+          <img src="images/chocolate-database.png" alt="Chocolate Database project screenshot" />
         </div>
+        <div class="project-body">
+          <h3>Chocolate Database</h3>
+          <div class="tags"><span>Java</span><span>SQL</span><span>JDBC</span></div>
+          <p>A database application for managing chocolate inventory, with querying, reporting, and a user-friendly interface for tracking varieties, origins, and sales data.</p>
+          <a href="https://github.com/Dylan-Brooks2/Chocolate-Database" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </article>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <p>© 2025 Dylan Brooks &nbsp;·&nbsp; Built with 🌱 &nbsp;·&nbsp;
-                <a href="https://www.linkedin.com/in/dylan-brooks" target="_blank">LinkedIn</a> &nbsp;·&nbsp;
-                <a href="https://github.com/dylanbrooks" target="_blank">GitHub</a>
-            </p>
-        </footer>
+      <article class="project-card">
+        <div class="project-image">
+          <img src="images/pomodoro.png" alt="Pomodoro application screenshot" />
+        </div>
+        <div class="project-body">
+          <h3>Pomodoro Application</h3>
+          <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+          <p>An interactive Pomodoro timer that alternates work sessions with short breaks, featuring customizable timers and progress tracking.</p>
+          <a href="https://dylan-brooks2.github.io/Personal-Projects/Pomodoro%20App/" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </article>
 
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="script.js"></script>
-    </body>
+      <article class="project-card">
+        <div class="project-image">
+          <img src="images/quote-generator.png" alt="Quote Generator project screenshot" />
+        </div>
+        <div class="project-body">
+          <h3>Quote Generator</h3>
+          <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+          <p>An interactive quote generator that serves a new inspirational quote on each visit, with a clean, modern design.</p>
+          <a href="https://dylan-brooks2.github.io/Personal-Projects/Quote-Generator/" target="_blank" rel="noopener">View Project →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact-container" class="contact">
+    <div class="section-head">
+      <p class="eyebrow">Get in Touch</p>
+      <h2>Contact Me</h2>
+    </div>
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-row">
+        <label for="phone">Phone Number (Optional)</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+      <div class="form-row">
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="first-name" required />
+      </div>
+      <div class="form-row">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Dylan Brooks &middot; <a href="https://www.linkedin.com/in/dylan-brooks" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/dylanbrooks" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
 </html>

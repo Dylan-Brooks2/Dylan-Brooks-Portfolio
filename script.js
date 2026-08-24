@@ -1,120 +1,125 @@
-// ============================
-// Scroll to Top Button
-// ============================
-const scrollButton = document.getElementById('drop-down');
-const scrollContainer = document.getElementById('scroll-container');
+(function () {
+  const root = document.documentElement;
+  const toggle = document.getElementById("theme-toggle");
+  const vibeButton = document.getElementById("vibe-button");
+  const vibeLine = document.getElementById("vibe-line");
+  const contactForm = document.getElementById("contact-form");
+  const formStatus = document.querySelector(".form-status");
+  const profGrid = document.querySelector(".prof-grid");
+  const profCards = profGrid ? profGrid.querySelectorAll("li") : [];
 
-window.addEventListener('scroll', () => {
-    scrollContainer.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
+  const vibes = [
+    "I build products people actually want.",
+    "I turn messy ideas into clear products.",
+    "I like solving problems with code and clean UX.",
+    "I build thoughtful experiences with real utility."
+  ];
 
-scrollButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  let vibeIndex = 0;
 
-scrollContainer.style.display = 'none';
-
-
-// ============================
-// EmailJS Initialization
-// ============================
-(function() {
-    emailjs.init("dnrJt4ojyuci2ewsT");
-})();
-
-
-// ============================
-// Contact Form Validation and Sending
-// ============================
-const submitBtn  = document.getElementById('submit-btn');
-const feedback   = document.getElementById('form-feedback');
-const emailInput = document.getElementById('user-email');
-const nameInput  = document.getElementById('user-first-name');
-const msgInput   = document.getElementById('user-message');
-
-submitBtn.addEventListener('click', () => {
-    feedback.textContent = '';
-    feedback.className = '';
-
-    const email   = emailInput.value.trim();
-    const name    = nameInput.value.trim();
-    const message = msgInput.value.trim();
-    const phone   = document.getElementById('user-phone').value.trim();
-
-    if (!email || !name || !message) {
-        showFeedback('Please fill in all required fields.', 'error');
-        return;
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem("theme");
+    } catch (e) {
+      return null;
     }
+  }
 
-    if (!isValidEmail(email)) {
-        showFeedback('Please enter a valid email address.', 'error');
-        return;
+  function storeTheme(value) {
+    try {
+      localStorage.setItem("theme", value);
+    } catch (e) {
+      /* storage unavailable, theme just won't persist */
     }
+  }
 
-    // Disable button and show sending state
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-    console.log('Starting to send email...');
+  function applyTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    if (toggle) {
+      toggle.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+    }
+  }
 
-    // Send email using EmailJS
-    const templateParams = {
-        from_name: name,
-        from_email: email,
-        phone: phone,
-        message: message,
-        to_email: 'dylanbrooks0215@gmail.com' // Your email address
-    };
+  const stored = getStoredTheme();
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(stored || (prefersDark ? "dark" : "light"));
 
-    emailjs.send('service_kr214ck', 'template_v2azzno', templateParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            showFeedback(`Thanks, ${name}! Your message was sent. I'll be in touch soon. 🌱`, 'success');
-            emailInput.value = '';
-            nameInput.value  = '';
-            msgInput.value   = '';
-            document.getElementById('user-phone').value = '';
-        }, function(error) {
-            console.log('FAILED...', error);
-            showFeedback('Sorry, there was an error sending your message. Please try again later.', 'error');
-        })
-        .finally(() => {
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Send Message';
-            console.log('Button re-enabled');
-        });
-});
-
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-function showFeedback(message, type) {
-    feedback.textContent = message;
-    feedback.className = type;
-}
-
-
-// ============================
-// Active Nav Highlight on Scroll
-// ============================
-const sections = document.querySelectorAll('[id$="-container"]');
-const navLinks = document.querySelectorAll('.nav-buttons');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navLinks.forEach(link => {
-                link.style.backgroundColor = '';
-                link.style.fontWeight = '';
-            });
-            const activeLink = document.querySelector(`.nav-buttons[href="#${entry.target.id}"]`);
-            if (activeLink) {
-                activeLink.style.backgroundColor = '#689a75';
-                activeLink.style.fontWeight = '700';
-            }
-        }
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      applyTheme(next);
+      storeTheme(next);
     });
-}, { threshold: 0.3 });
+  }
 
-sections.forEach(section => observer.observe(section));
+  if (vibeButton && vibeLine) {
+    vibeButton.addEventListener("click", function () {
+      vibeLine.classList.add("bump");
+      setTimeout(() => {
+        vibeIndex = (vibeIndex + 1) % vibes.length;
+        vibeLine.textContent = vibes[vibeIndex];
+        vibeLine.classList.remove("bump");
+      }, 150);
+    });
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const firstName = document.getElementById("first-name").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!email || !firstName || !message) {
+        return;
+      }
+
+      const subject = encodeURIComponent(`Portfolio inquiry from ${firstName}`);
+      const body = encodeURIComponent(
+        `Name: ${firstName}\nEmail: ${email}\nPhone: ${phone || "N/A"}\n\nMessage:\n${message}`
+      );
+
+      window.location.href = `mailto:dylanbrooks0215@gmail.com?subject=${subject}&body=${body}`;
+
+      if (formStatus) {
+        formStatus.textContent = "Your email draft is ready — send it from your mail app to finish.";
+      }
+    });
+  }
+
+  if (profGrid && profCards.length) {
+    profCards.forEach((card) => {
+      card.style.setProperty("--repel-x", "0px");
+      card.style.setProperty("--repel-y", "0px");
+
+      card.addEventListener("click", function (event) {
+        const rect = card.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const deltaX = centerX - event.clientX;
+        const deltaY = centerY - event.clientY;
+        const distance = Math.max(1, Math.hypot(deltaX, deltaY));
+
+        const repelX = (deltaX / distance) * 24;
+        const repelY = (deltaY / distance) * 24;
+
+        card.classList.add("is-repelled");
+        card.style.setProperty("--repel-x", `${repelX}px`);
+        card.style.setProperty("--repel-y", `${repelY}px`);
+
+        clearTimeout(card._repelResetTimer);
+        card._repelResetTimer = setTimeout(function () {
+          card.classList.remove("is-repelled");
+          card.style.setProperty("--repel-x", "0px");
+          card.style.setProperty("--repel-y", "0px");
+        }, 320);
+      });
+    });
+  }
+})();
